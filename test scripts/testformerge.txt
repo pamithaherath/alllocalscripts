@@ -1,3 +1,4 @@
 testPipeline
 
-test from main
+test from latest modifications
+test from master

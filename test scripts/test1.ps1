@@ -3,6 +3,8 @@ $serverList = get-content "C:\Users\pherathmudiy\Downloads\PDC App server list.t
 foreach ($row in $serverList)
  {
 $serverName = $row.Split("`t ")[0]
+
+#comment
 $Vm = Get-AzVM -Name $serverName
 $rgName = $Vm.ResourceGroupName
 $location = $Vm.Location
