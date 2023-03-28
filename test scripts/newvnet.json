@@ -1,0 +1,703 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.4.1318.3566",
+      "templateHash": "3319571400966874937"
+    }
+  },
+  "parameters": {
+    "MGT2aueventname": {
+      "type": "string",
+      "defaultValue": "vnet-prd-mgt-aue-001"
+    },
+    "auelocation": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-ra-win",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-ra-win",
+            "properties": {
+              "addressPrefix": "10.97.8.0/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-ra-lin",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-ra-lin",
+            "properties": {
+              "addressPrefix": "10.97.8.32/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-smtp",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-smtp",
+            "properties": {
+              "addressPrefix": "10.97.8.64/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-vulnscan",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-vulnscan",
+            "properties": {
+              "addressPrefix": "10.97.8.96/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-devops",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-devops",
+            "properties": {
+              "addressPrefix": "10.97.8.128/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-siendev",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-siemdev",
+            "properties": {
+              "addressPrefix": "10.97.8.160/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-siemsit",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-siemsit",
+            "properties": {
+              "addressPrefix": "10.97.8.192/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-symep-win",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-symep-win",
+            "properties": {
+              "addressPrefix": "10.97.8.160/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-clmep-lin",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-clmep-lin",
+            "properties": {
+              "addressPrefix": "10.97.9.0/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-whlist",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-whlist",
+            "properties": {
+              "addressPrefix": "10.97.9.32/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-midserver",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-midserver",
+            "properties": {
+              "addressPrefix": "10.97.9.64/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-tenable",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-tenable",
+            "properties": {
+              "addressPrefix": "10.97.9.96/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-oem",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-oem",
+            "properties": {
+              "addressPrefix": "10.97.9.128/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-cyberark",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-cyberark",
+            "properties": {
+              "addressPrefix": "10.97.9.160/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-pvtep",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-pvtep",
+            "properties": {
+              "addressPrefix": "10.97.9.192/27",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-stopvt",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-stopvt",
+            "properties": {
+              "addressPrefix": "10.97.16.0/26",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "apiVersion": "2021-05-01",
+      "name": "rt-prd-aue-mgt-anf",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "route-to-prd-aue-mgt-anf",
+            "properties": {
+              "addressPrefix": "10.97.16.64/26",
+              "hasBgpOverride": false,
+              "nextHopType": "VnetLocal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-ra-win",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-ra-lin",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-smtp",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-vulnscan",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-devops",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-siemdev",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-siemsit",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-symep-win",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-clmep-lin",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-whlist",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-midserver",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-tenable",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-oem",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-cyberark",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-pvtep",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-stopvt",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2021-05-01",
+      "name": "nsg-prd-aue-mgt-anf",
+      "location": "[parameters('auelocation')]"
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2021-05-01",
+      "name": "[parameters('MGT2aueventname')]",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.97.8.0/21"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "sn-prd-aue-mgt-ra-win",
+            "properties": {
+              "addressPrefix": "10.97.8.0/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-ra-win')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-ra-win')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-ra-lin",
+            "properties": {
+              "addressPrefix": "10.97.8.32/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-ra-lin')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-ra-lin')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-smtp",
+            "properties": {
+              "addressPrefix": "10.97.8.64/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-smtp')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-smtp')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-vulnscan",
+            "properties": {
+              "addressPrefix": "10.97.8.96/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-vulnscan')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-vulnscan')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-devops",
+            "properties": {
+              "addressPrefix": "10.97.8.128/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-devops')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-devops')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-siemdev",
+            "properties": {
+              "addressPrefix": "10.97.8.160/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-siendev')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-siemdev')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-siemsit",
+            "properties": {
+              "addressPrefix": "10.97.8.192/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-siemsit')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-siemsit')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-symep-win",
+            "properties": {
+              "addressPrefix": "10.97.8.224/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-symep-win')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-symep-win')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-clmep-lin",
+            "properties": {
+              "addressPrefix": "10.97.9.0/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-clmep-lin')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-clmep-lin')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-whlist",
+            "properties": {
+              "addressPrefix": "10.97.9.32/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-whlist')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-whlist')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-midserver",
+            "properties": {
+              "addressPrefix": "10.97.9.64/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-midserver')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-midserver')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-tenable",
+            "properties": {
+              "addressPrefix": "10.97.9.96/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-tenable')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-tenable')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-oem",
+            "properties": {
+              "addressPrefix": "10.97.9.128/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-oem')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-oem')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-cyberark",
+            "properties": {
+              "addressPrefix": "10.97.9.160/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-cyberark')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-cyberark')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-pvtep",
+            "properties": {
+              "addressPrefix": "10.97.9.192/27",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-pvtep')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-pvtep')]"
+              }
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-clmep-lin')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-cyberark')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-devops')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-midserver')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-oem')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-pvtep')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-ra-lin')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-ra-win')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-siemdev')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-siemsit')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-smtp')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-symep-win')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-tenable')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-vulnscan')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-whlist')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-clmep-lin')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-cyberark')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-devops')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-midserver')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-oem')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-pvtep')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-ra-lin')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-ra-win')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-siendev')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-siemsit')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-smtp')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-symep-win')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-tenable')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-vulnscan')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-whlist')]"
+      ]
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2021-05-01",
+      "name": "[parameters('MGT2aueventname')]",
+      "location": "[parameters('auelocation')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.97.16.0/21"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "sn-prd-aue-mgt-stopvt",
+            "properties": {
+              "addressPrefix": "10.97.16.0/26",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-stopvt')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-stopvt')]"
+              }
+            }
+          },
+          {
+            "name": "sn-prd-aue-mgt-anf",
+            "properties": {
+              "addressPrefix": "10.97.16.64/26",
+              "routeTable": {
+                "id": "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-anf')]"
+              },
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-anf')]"
+              }
+            }
+          }
+        ]
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-anf')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg-prd-aue-mgt-stopvt')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-anf')]",
+        "[resourceId('Microsoft.Network/routeTables', 'rt-prd-aue-mgt-stopvt')]"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+New-AzNetworkSecurityGroup -Name "nsg-sn-npp-auc1-mgt-whlist" -ResourceGroupName "rg-npp-mgt-network-auc1-001"  -Location  "australiacentral"
+New-AzNetworkSecurityGroup -Name "nsg-sn-npp-auc1-mgt-midserver" -ResourceGroupName "rg-npp-mgt-network-auc1-001"  -Location  "australiacentral"
+New-AzNetworkSecurityGroup -Name "nsg-sn-npp-auc1-mgt-oem" -ResourceGroupName "rg-npp-mgt-network-auc1-001"  -Location  "australiacentral"
+New-AzNetworkSecurityGroup -Name "nsg-sn-npp-auc1-mgt-pvtep" -ResourceGroupName "rg-npp-mgt-network-auc1-001"  -Location  "australiacentral"
+New-AzNetworkSecurityGroup -Name "nsg-sn-npp-auc1-mgt-wsus" -ResourceGroupName "rg-npp-mgt-network-auc1-001"  -Location  "australiacentral"
+New-AzNetworkSecurityGroup -Name "nsg-sn-npp-auc1-mgt-devops" -ResourceGroupName "rg-npp-mgt-network-auc1-001"  -Location  "australiacentral"
