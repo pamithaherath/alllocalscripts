@@ -3,6 +3,8 @@ testPipeline
 <<<<<<< HEAD
 test from latest modifications
 test from master
-=======
+
+test
+ =======
 making a change
 >>>>>>> latest_modifications
