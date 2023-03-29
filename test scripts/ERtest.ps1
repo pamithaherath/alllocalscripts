@@ -3,6 +3,7 @@ $rg = "rg-ninp-conn-expressroute-pnp-aue1"
 $circuitConnectionName = "cxn-vgw-npp-con-erc-aue-001"
 $conRG = "rg-npp-con-networkhub-aue"
 
+#This is test
 #Remove-AzVirtualNetworkGatewayConnection -Name $circuitConnectionName -ResourceGroupName $conRG -Force
 
 

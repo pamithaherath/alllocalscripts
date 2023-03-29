@@ -1,6 +1,6 @@
 
 
-<#for($i=1; $i -le 10; $i++)
+for($i=1; $i -le 10; $i++)
 {
    
 
@@ -15,7 +15,7 @@
     }
     New-AzPublicIpAddress @ip
    
-}#>
+}
 
 $pips = Get-AzPublicIpAddress
 
