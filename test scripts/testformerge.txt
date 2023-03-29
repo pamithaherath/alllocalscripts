@@ -1,14 +1,2 @@
 testPipeline
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-test from latest modifications
-test from master
-
-test
- =======
-making a change
->>>>>>> latest_modifications
-=======
-making a change222
->>>>>>> latest_modifications
